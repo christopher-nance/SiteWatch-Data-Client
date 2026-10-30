@@ -1,0 +1,66 @@
+site_name: SiteWatch Data Client
+site_description: Read-only, Pydantic-typed Python client for the DRB SiteWatch POS database (ICON Car Wash)
+site_url: https://christopher-nance.github.io/SiteWatch-Data-Client/
+repo_url: https://github.com/christopher-nance/SiteWatch-Data-Client
+repo_name: christopher-nance/SiteWatch-Data-Client
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: blue
+    accent: light blue
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.expand
+    - navigation.sections
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_source: false
+            show_root_heading: true
+            heading_level: 2
+            docstring_style: google
+            merge_init_into_class: true
+            show_signature_annotations: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+exclude_docs: |
+  superpowers/
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Recipes: recipes.md
+  - Guides:
+      - Client and Raw Queries: guides/client.md
+      - Sites: guides/sites.md
+      - Sales: guides/sales.md
+      - Catalog: guides/catalog.md
+      - Memberships: guides/memberships.md
+      - Labor and Timecards: guides/labor.md
+  - Troubleshooting: troubleshooting.md
+  - API Reference:
+      - Client: api/client.md
+      - Resources: api/resources.md
+      - Models: api/models.md
+      - Exceptions: api/exceptions.md
